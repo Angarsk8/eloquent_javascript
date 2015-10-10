@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            height: 200px;
+            background-color: beige;
+        }
+        
+        .dot {
+            height: 8px;
+            width: 8px;
+            border-radius: 4px;
+            background-color: blue;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        (function () {
+            document.addEventListener("click", function (e) {
+                var dot = document.createElement("div");
+                dot.className = "dot";
+                dot.style.left = (e.pageX - 4) + "px";
+                dot.style.top = (e.pageY - 4) + "px";
+                document.body.appendChild(dot);
+                console.log(dot.getBoundingClientRect());
+            });
+        })();
+    </script>
+</body>
+
+</html>

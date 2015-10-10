@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <script>
+        (function () {
+            var input = document.body.querySelector("input");
+            input.addEventListener("keydown", function (e) {
+                if (e.keyCode == 81 || e.keyCode == 87 || e.keyCode == 88) {
+                    e.preventDefault();
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>

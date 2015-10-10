@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>This page turn violet when you hold the V key</p>
+    <script>
+        (function () {
+            var charCode = "V".charCodeAt(0);
+            document.addEventListener("keydown", function (e) {
+                if (e.keyCode == charCode) {
+                    document.body.style.background = "violet";
+                }
+            });
+            document.addEventListener("keyup", function (e) {
+                if (e.keyCode == charCode) {
+                    document.body.style.backgroundColor = "";
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>

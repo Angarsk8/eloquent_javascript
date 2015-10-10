@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <p data-classified="secret">The launch code is 000000</p>
+    <p data-classified="unclassified">I have two feet.</p>
+    <script>
+        (function () {
+            var paragraphs = document.getElementsByTagName("p");
+            Array.prototype.forEach.call(paragraphs, function (par) {
+                if (par.getAttribute("data-classified") == "secret")
+                    par.parentNode.removeChild(par);
+            });
+        })();
+    </script>
+</body>
+
+</html>

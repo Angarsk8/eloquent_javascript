@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <script>
+        (function () {
+            var text = document.querySelector("textarea");
+            var timeOut;
+            text.addEventListener("keydown", function (e) {
+                clearTimeout(timeOut);
+                timeOut = setTimeout(function () {
+                    console.log("You stopped typing!!");
+                }, 500);
+            });
+        })();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>ONE</button>
+    <button>TWO</button>
+    <button>THREE</button>
+    <script>
+        (function () {
+            document.addEventListener("click", function (e) {
+                if (e.target.nodeName == "BUTTON")
+                    console.log("Clicked!!", e.target.textContent);
+            });
+        })();
+    </script>
+</body>
+
+</html>

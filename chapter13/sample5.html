@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <p><span id="one"></span>
+    </p>
+    <p><span id="two"></span>
+    </p>
+    <script>
+        (function () {
+            function time(name, action) {
+                var start = Date.now();
+                action();
+                console.log(name, "took", Date.now() - start, "ms");
+            }
+
+            time("naive", function () {
+                var target = document.getElementById("one");
+                while (target.offsetWidth < 2000) {
+                    target.appendChild(document.createTextNode("X"));
+                }
+            });
+
+            time("clever", function () {
+                var target = document.getElementById("two");
+                target.appendChild(document.createTextNode("XXXXX"));
+                var total = Math.round(2000 / (target.offsetWidth / 5));
+                for (var i = 5; i < total; i++) {
+                    target.appendChild(document.createTextNode("X"));
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>

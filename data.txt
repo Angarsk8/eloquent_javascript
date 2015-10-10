@@ -1,0 +1,6 @@
+Andrés García   waffle iron 80  2
+Andrés García   blender 200 1
+Andrés García   waffle  knife   10    4
+Alejandro Hurtado   waffle iron 80  1
+Alejandro Hurtado   waffle knife    10 4
+Alejandro Hurtado   blender 200 1

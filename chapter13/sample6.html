@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        p {
+            text-align: center;
+            margin-top: 100px;
+        }
+        
+        img {
+            position: relative;
+            width: 100px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        <img src="http://dev.bowdenweb.com/a/i/cons/icomoon/svg/git-cat.svg" alt="cat">
+    </p>
+    <script>
+        (function () {
+            var cat = document.querySelector("img");
+            var angle = 0,
+                lastTime = null;
+
+            function animate(time) {
+                if (lastTime != null) {
+                    angle += (time - lastTime) * 0.001;
+                }
+                lastTime = time;
+                cat.style.top = (Math.sin(angle) * 20) + "px";
+                cat.style.left = (Math.cos(angle) * 200) + "px";
+                requestAnimationFrame(animate);
+            }
+            requestAnimationFrame(animate);
+        })();
+    </script>
+</body>
+
+</html>

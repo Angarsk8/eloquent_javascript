@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Paragraph with a
+        <button>button</button>
+    </p>
+    <script>
+        (function () {
+            var para = document.querySelector("p");
+            var button = document.querySelector("button");
+            para.addEventListener("mousedown", function (e) {
+                console.log("From paragraph!");
+            });
+            button.addEventListener("mousedown", function (e) {
+                console.log("From button!");
+                if (e.which == 1) e.stopPropagation();
+            });
+        })();
+    </script>
+</body>
+
+</html>

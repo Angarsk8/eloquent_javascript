@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>Click me anyway you want</button>
+    <script>
+        (function () {
+            var button = document.querySelector("button");
+            button.addEventListener("mousedown", function (e) {
+                switch (e.which) {
+                case 1:
+                    console.log("Left button", e.type);
+                    break;
+                case 2:
+                    console.log("Middle button", e.type);
+                    break;
+                case 3:
+                    console.log("Right button", e.type);
+                    break;
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>

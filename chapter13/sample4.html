@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <p style="border: 1px solid red;">I'm boxed in</p>
+    <script>
+        (function () {
+            var par = document.getElementsByTagName("p")[0];
+            console.log(par.offsetHeight); // 20
+            console.log(par.clientHeight); // 20 - 1 - 1 = 18
+        })();
+    </script>
+</body>
+
+</html>

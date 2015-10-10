@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <p></p>
+    <script>
+        (function () {
+            var myWorker = new Worker("myworker.js");
+            var par = document.body.querySelector("p");
+            myWorker.addEventListener("message", function (e) {
+                par.textContent = e.data;
+            });
+            myWorker.postMessage(10);
+            myWorker.postMessage(15);
+        })();
+    </script>
+</body>
+
+</html>

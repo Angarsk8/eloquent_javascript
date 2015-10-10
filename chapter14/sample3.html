@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>Act-Once button</button>
+    <script>
+        (function () {
+            var button = document.querySelector("button");
+
+            function once() {
+                console.log("Done!");
+                button.removeEventListener("click", once);
+            }
+
+            button.addEventListener("click", once);
+        })();
+    </script>
+</body>
+
+</html>

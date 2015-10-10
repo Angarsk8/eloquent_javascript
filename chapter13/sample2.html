@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <blockquote id="quote">
+        Esta es una anotación de prueba!
+    </blockquote>
+    <script>
+        (function () {
+            function elt(type) {
+                var node = document.createElement(type);
+                for (var i = 1; i < arguments.length; i++) {
+                    var child = arguments[i];
+                    if (typeof child == "string")
+                        child = document.createTextNode(child);
+                    node.appendChild(child);
+                }
+                return node;
+            }
+            document.getElementById("quote").appendChild(elt("footer", "---",
+                elt("Strong", "Karl Popper"),
+                ", preface of the second edition of",
+                elt("em", " The Open Society and Its Enemies"),
+                ", 1950"));
+        })();
+    </script>
+</body>
+
+</html>
